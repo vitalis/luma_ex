@@ -1,5 +1,5 @@
 # LumaaiEx
-============
+
 
 A client library for the Luma Labs API, providing a simple and intuitive interface for Elixir applications to interact with Luma Labs services.
 
@@ -42,20 +42,27 @@ client = LumaaiEx.new(auth_token: System.get_env("LUMAAI_API_KEY"))
 
 ### Making API calls
 
+#### Create a new text-to-video generation
+
 ```elixir
-# Create a new text-to-video generation
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "A teddy bear in sunglasses playing electric guitar and dancing"
 })
+```
 
-# Create a generation with loop and aspect ratio
+#### Create a generation with loop and aspect ratio
+
+```elixir
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "A teddy bear in sunglasses playing electric guitar and dancing",
   loop: true,
   aspect_ratio: "3:4"
 })
+```
 
-# Create an image-to-video generation with a start frame
+#### Create an image-to-video generation with a start frame
+
+```elixir
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "Low-angle shot of a majestic tiger prowling through a snowy landscape, leaving paw prints on the white blanket",
   keyframes: %{
@@ -65,8 +72,11 @@ client = LumaaiEx.new(auth_token: System.get_env("LUMAAI_API_KEY"))
     }
   }
 })
+```
 
-# Extend a video
+#### Extend a video
+
+```elixir
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "A teddy bear in sunglasses playing electric guitar and dancing",
   keyframes: %{
@@ -76,24 +86,40 @@ client = LumaaiEx.new(auth_token: System.get_env("LUMAAI_API_KEY"))
     }
   }
 })
+```
 
-# Get a specific generation
+#### Get a specific generation
+
+```elixir
 {:ok, generation} = LumaaiEx.get_generation(client, "d1968551-6113-4b46-b567-09210c2e79b0")
+```
 
-# List all generations
+#### List all generations
+
+```elixir
 {:ok, generations} = LumaaiEx.list_generations(client, limit: 100, offset: 0)
+```
 
-# Delete a generation
+#### Delete a generation
+
+```elixir
 {:ok, _} = LumaaiEx.delete_generation(client, "d1968551-6113-4b46-b567-09210c2e79b0")
+```
 
-# Get available camera motions
+#### Get available camera motions
+
+```elixir
 {:ok, supported_camera_motions} = LumaaiEx.get_camera_motions(client)
+```
 
-# Create a generation with a callback URL
+#### Create a generation with a callback URL
+
+```elixir
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "A teddy bear in sunglasses playing electric guitar and dancing",
   callback_url: "https://your-api-endpoint.com/callback"
 })
+```
 
 ### How to get the video for a generation
 
@@ -117,7 +143,6 @@ defmodule GenerationPoller do
   end
 end
 
-# Usage
 {:ok, generation} = LumaaiEx.create_generation(client, %{
   prompt: "A teddy bear in sunglasses playing electric guitar and dancing"
 })
@@ -127,10 +152,11 @@ case GenerationPoller.poll_until_completed(client, generation.id) do
     # Download the video
     {:ok, %HTTPoison.Response{body: body}} = HTTPoison.get(video_url)
     File.write!("#{generation.id}.mp4", body)
-    IO.puts("File downloaded as #{generation.id}.mp4")
+    IO.puts("File downloaded as " <> generation.id <> ".mp4")
   {:error, reason} ->
-    IO.puts("Error: #{reason}")
+    IO.puts("Error: " <> reason)
 end
+```
 
 For more information on available endpoints and parameters, refer to the [Luma Labs API documentation](https://docs.lumalabs.ai/docs/api).
 
