@@ -1,5 +1,14 @@
 # LumaaiEx
 
+[![hex.pm version](https://img.shields.io/hexpm/v/lumaai_ex.svg?style=flat)](https://hex.pm/packages/lumaai_ex)
+[![Hex Docs](https://img.shields.io/badge/hex-docs-lightgreen.svg)](https://hexdocs.pm/lumaai_ex/)
+[![hex.pm license](https://img.shields.io/hexpm/l/lumaai_ex.svg)](https://github.com/vitalis/lumaai_ex/blob/master/LICENSE)
+[![Build Status](https://github.com/vitalis/lumaai_ex/workflows/tests/badge.svg)](https://github.com/vitalis/lumaai_ex/actions)
+[![Last Updated](https://img.shields.io/github/last-commit/vitalis/lumaai_ex.svg)](https://github.com/vitalis/lumaai_ex/commits/master)
+[![Coverage Status](https://coveralls.io/repos/github/vitalis/lumaai_ex/badge.svg?branch=main)](https://coveralls.io/github/vitalis/lumaai_ex?branch=main)
+
+
+
 
 A client library for the Luma Labs API, providing a simple and intuitive interface for Elixir applications to interact with Luma Labs services.
 
