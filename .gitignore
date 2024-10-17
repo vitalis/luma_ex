@@ -20,7 +20,7 @@ erl_crash.dump
 *.ez
 
 # Ignore package tarball (built via "mix hex.build").
-luma_ex-*.tar
+lumaai_ex-*.tar
 
 # Temporary files, for example, from tests.
 /tmp/
@@ -37,3 +37,5 @@ luma_ex-*.tar
 *.swo
 .vscode/
 .idea/
+.elixir_ls/
+.mix_tasks
