@@ -168,13 +168,12 @@ end
 For more information on available endpoints and parameters, refer to the [Luma Labs API documentation](https://docs.lumalabs.ai/docs/api).
 
 ## Documentation
-
-Full documentation on [hexdocs.pm](https://hexdocs.pm/lumaai_ex/).
+Please find documentation on the [HexDocs](https://hexdocs.pm/lumaai_ex/).
 
 ## Contributing
 
 Contributions are welcome! Please feel free to submit a Pull Request.
 
 ## License
-
+Copyright (c) 2024 Vitaly Gorodetsky
 This project is licensed under the [MIT License](./LICENSE).
