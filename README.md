@@ -17,7 +17,7 @@ Add `lumaai_ex` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:lumaai_ex, "~> 0.1.0"}
+    {:lumaai_ex, "~> 0.1.1"}
   ]
 end
 ```
